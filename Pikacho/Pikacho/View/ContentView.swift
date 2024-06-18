@@ -112,6 +112,7 @@ struct ContentView: View {
             Button{}label:{
                 RoundedRectangle(cornerRadius: 5).frame(width:255, height: 36).foregroundColor(.gray)
             }.padding(.horizontal, 8)
+
         }
     }
 }
