@@ -12,6 +12,9 @@
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
 		EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */; };
 		EECEED812C21070E00C0A60D /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED802C21070E00C0A60D /* Font+.swift */; };
+		EECEED8A2C21182A00C0A60D /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED892C21182A00C0A60D /* BookingView.swift */; };
+		EECEED8C2C211BD200C0A60D /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EECEED7C2C2106BD00C0A60D /* SF-Pro-Text-Regular.otf */; };
+		EECEED8D2C211BD600C0A60D /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EECEED7B2C2106BD00C0A60D /* SF-Pro-Text-Bold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,8 @@
 		EECEED7B2C2106BD00C0A60D /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		EECEED7C2C2106BD00C0A60D /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		EECEED802C21070E00C0A60D /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		EECEED892C21182A00C0A60D /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		EECEED8B2C211A4300C0A60D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +60,11 @@
 		EECEED622C1FE45800C0A60D /* Pikacho */ = {
 			isa = PBXGroup;
 			children = (
+				EECEED8B2C211A4300C0A60D /* Info.plist */,
 				EECEED7F2C2106EC00C0A60D /* Resource */,
 				EECEED632C1FE45800C0A60D /* PikachoApp.swift */,
 				EECEED652C1FE45800C0A60D /* ContentView.swift */,
-				EECEED672C1FE45800C0A60D /* Assets.xcassets */,
+				EECEED892C21182A00C0A60D /* BookingView.swift */,
 				EECEED692C1FE45800C0A60D /* Preview Content */,
 			);
 			path = Pikacho;
@@ -92,6 +98,7 @@
 		EECEED7F2C2106EC00C0A60D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EECEED672C1FE45800C0A60D /* Assets.xcassets */,
 				EECEED7D2C2106C800C0A60D /* Fonts */,
 				EECEED7E2C2106DD00C0A60D /* Extension */,
 			);
@@ -156,7 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECEED8C2C211BD200C0A60D /* SF-Pro-Text-Regular.otf in Resources */,
 				EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */,
+				EECEED8D2C211BD600C0A60D /* SF-Pro-Text-Bold.otf in Resources */,
 				EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECEED8A2C21182A00C0A60D /* BookingView.swift in Sources */,
 				EECEED812C21070E00C0A60D /* Font+.swift in Sources */,
 				EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */,
 				EECEED642C1FE45800C0A60D /* PikachoApp.swift in Sources */,
@@ -307,6 +317,7 @@
 				DEVELOPMENT_TEAM = 873V2J7TPM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pikacho/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +347,7 @@
 				DEVELOPMENT_TEAM = 873V2J7TPM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pikacho/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
