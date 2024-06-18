@@ -11,6 +11,9 @@
 		EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED652C1FE45800C0A60D /* ContentView.swift */; };
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
 		EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */; };
+		F75243832C21C3630014DD61 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75243822C21C3630014DD61 /* CoreNFC.framework */; };
+		F75243852C21C37F0014DD61 /* NFCTagScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75243842C21C37F0014DD61 /* NFCTagScanView.swift */; };
+		F75243892C21C7330014DD61 /* NFCFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75243882C21C7330014DD61 /* NFCFeature.swift */; };
 		F77E75D42C2118D800972FFE /* PCBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E75D32C2118D800972FFE /* PCBooking.swift */; };
 		F77E75D62C211D0000972FFE /* PCColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E75D52C211D0000972FFE /* PCColorList.swift */; };
 		F77E75D82C211DAE00972FFE /* ColorWithHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E75D72C211DAE00972FFE /* ColorWithHex.swift */; };
@@ -22,6 +25,9 @@
 		EECEED652C1FE45800C0A60D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EECEED672C1FE45800C0A60D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F75243822C21C3630014DD61 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		F75243842C21C37F0014DD61 /* NFCTagScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCTagScanView.swift; sourceTree = "<group>"; };
+		F75243882C21C7330014DD61 /* NFCFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCFeature.swift; sourceTree = "<group>"; };
 		F77E75D32C2118D800972FFE /* PCBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCBooking.swift; sourceTree = "<group>"; };
 		F77E75D52C211D0000972FFE /* PCColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCColorList.swift; sourceTree = "<group>"; };
 		F77E75D72C211DAE00972FFE /* ColorWithHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWithHex.swift; sourceTree = "<group>"; };
@@ -32,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F75243832C21C3630014DD61 /* CoreNFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +50,7 @@
 			children = (
 				EECEED622C1FE45800C0A60D /* Pikacho */,
 				EECEED612C1FE45800C0A60D /* Products */,
+				F75243812C21C3630014DD61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +83,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F75243812C21C3630014DD61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F75243822C21C3630014DD61 /* CoreNFC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F77E75D12C2117BD00972FFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				EECEED652C1FE45800C0A60D /* ContentView.swift */,
+				F75243842C21C37F0014DD61 /* NFCTagScanView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F77E75D72C211DAE00972FFE /* ColorWithHex.swift */,
+				F75243882C21C7330014DD61 /* NFCFeature.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -173,7 +191,9 @@
 				F77E75D82C211DAE00972FFE /* ColorWithHex.swift in Sources */,
 				EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */,
 				F77E75D42C2118D800972FFE /* PCBooking.swift in Sources */,
+				F75243892C21C7330014DD61 /* NFCFeature.swift in Sources */,
 				F77E75D62C211D0000972FFE /* PCColorList.swift in Sources */,
+				F75243852C21C37F0014DD61 /* NFCTagScanView.swift in Sources */,
 				EECEED642C1FE45800C0A60D /* PikachoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
