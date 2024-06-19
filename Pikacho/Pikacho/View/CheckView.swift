@@ -76,6 +76,7 @@ struct CheckView: View {
                             }
                     }
                 }
+
     }
 
     private func loadBookings() {

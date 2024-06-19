@@ -72,6 +72,8 @@ struct BookingView: View {
                     
                     // CustomTextField로 텍스트 필드를 생성
                     CustomTextField(label: "닉네임", placeholder: "본인 닉네임을 영어로 입력해주세요.", text: $name)
+                        .keyboardType(.asciiCapable)
+
                     
                     Spacer().frame(height: 20)
                     
