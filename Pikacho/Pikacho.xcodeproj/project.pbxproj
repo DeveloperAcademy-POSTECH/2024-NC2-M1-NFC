@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE51E9392C226F6400295C98 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */; };
+		EE51E93B2C226FAA00295C98 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */; };
 		EECEED642C1FE45800C0A60D /* PikachoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED632C1FE45800C0A60D /* PikachoApp.swift */; };
 		EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED652C1FE45800C0A60D /* ContentView.swift */; };
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		EECEED602C1FE45800C0A60D /* Pikacho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pikacho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECEED632C1FE45800C0A60D /* PikachoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikachoApp.swift; sourceTree = "<group>"; };
 		EECEED652C1FE45800C0A60D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		EE51E9372C226F1A00295C98 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */,
 				EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */,
 			);
 			path = Font;
@@ -216,6 +219,7 @@
 			files = (
 				EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */,
 				EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */,
+				EE51E93B2C226FAA00295C98 /* SF-Pro-Text-Regular.otf in Resources */,
 				EE51E9392C226F6400295C98 /* SF-Pro-Text-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
