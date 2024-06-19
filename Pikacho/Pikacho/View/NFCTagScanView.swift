@@ -64,6 +64,8 @@ struct NFCTagScanView: View {
             return
         }
 
+        print("NFC scanning started")
+
         session = NFCNDEFReaderSession(delegate: NFCDelegate(showingAlert: $showingAlert, alertMessage: $alertMessage, haveToNavigate: $haveToNavigate), queue: nil, invalidateAfterFirstRead: false)
         session?.alertMessage = "Hold your iphone near the item to learn more about it."
         session?.begin()
