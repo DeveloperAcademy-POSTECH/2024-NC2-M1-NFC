@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EE51E9392C226F6400295C98 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */; };
 		EE51E93B2C226FAA00295C98 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */; };
+		EE51E93D2C2276C400295C98 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE51E93C2C2276C400295C98 /* UpdateView.swift */; };
 		EECEED642C1FE45800C0A60D /* PikachoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED632C1FE45800C0A60D /* PikachoApp.swift */; };
 		EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED652C1FE45800C0A60D /* ContentView.swift */; };
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		EE51E93C2C2276C400295C98 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		EECEED602C1FE45800C0A60D /* Pikacho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pikacho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECEED632C1FE45800C0A60D /* PikachoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikachoApp.swift; sourceTree = "<group>"; };
 		EECEED652C1FE45800C0A60D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -143,8 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				EECEED652C1FE45800C0A60D /* ContentView.swift */,
-				EEE024A82C2180A2002E239A /* BookingView.swift */,
 				EEE024AA2C226216002E239A /* CheckView.swift */,
+				EEE024A82C2180A2002E239A /* BookingView.swift */,
+				EE51E93C2C2276C400295C98 /* UpdateView.swift */,
 				F75243842C21C37F0014DD61 /* NFCTagScanView.swift */,
 			);
 			path = View;
@@ -234,6 +237,7 @@
 				F77E75D82C211DAE00972FFE /* ColorWithHex.swift in Sources */,
 				EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */,
 				EEE024A92C2180A2002E239A /* BookingView.swift in Sources */,
+				EE51E93D2C2276C400295C98 /* UpdateView.swift in Sources */,
 				EEE024AB2C226216002E239A /* CheckView.swift in Sources */,
 				EEE024A02C217EAB002E239A /* Font+.swift in Sources */,
 				F77E75D42C2118D800972FFE /* PCBooking.swift in Sources */,

@@ -21,6 +21,24 @@ class DataManager {
     func getAllBookings() -> [PCBooking] {
         return bookings
     }
+        
+//    func removeBooking(_ booking: PCBooking) {
+//            bookings.removeAll { $0.id == booking.id }
+//        }
+        
+    func removeBooking(by id: UUID) {
+                // id를 기준으로 배열에서 예약을 제거합니다.
+                bookings.removeAll { $0.id == id }
+            }
+    func updateBooking(_ updatedBooking: PCBooking) {
+            for index in 0..<bookings.count {
+                if bookings[index].id == updatedBooking.id {
+                    // 예약을 찾아서 업데이트합니다.
+                    bookings[index] = updatedBooking
+                    break
+                }
+            }
+        }
 }
 
 struct BookingView: View {
