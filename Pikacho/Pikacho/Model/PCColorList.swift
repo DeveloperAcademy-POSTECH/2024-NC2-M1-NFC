@@ -57,8 +57,4 @@ enum PCColorList: Int, CaseIterable, Hashable, Codable {
             return Color(hex: 0xFCD1BE)
         }
     }
-
-
-
-   
 }

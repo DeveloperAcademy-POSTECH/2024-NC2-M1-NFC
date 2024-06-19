@@ -107,10 +107,10 @@ struct ContentView: View {
     private func TableViewForReservation() -> some View {
         VStack(alignment:.trailing, spacing: 4){
             Rectangle()
-                .fill(Color.gray)
+                .fill(.gray)
                 .frame(width: 309, height: 1)
             Button{}label:{
-                RoundedRectangle(cornerRadius: 5).frame(width:255, height: 36).foregroundColor(.gray)
+                RoundedRectangle(cornerRadius: 5).frame(width:255, height: 36).foregroundColor(PCColorList.default.tableBackgroundColor)
             }.padding(.horizontal, 8)
 
         }
