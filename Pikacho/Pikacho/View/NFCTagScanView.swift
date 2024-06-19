@@ -58,6 +58,7 @@ struct NFCTagScanView: View {
 
     }
     private func beginScanning() {
+        print("Checking")
         guard NFCNDEFReaderSession.readingAvailable else {
             alertMessage = "This device doesn't support tag scanning."
             showingAlert = true
