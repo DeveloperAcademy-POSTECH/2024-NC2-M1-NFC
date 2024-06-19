@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE51E9392C226F6400295C98 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */; };
+		EE51E93B2C226FAA00295C98 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */; };
 		EECEED642C1FE45800C0A60D /* PikachoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED632C1FE45800C0A60D /* PikachoApp.swift */; };
 		EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED652C1FE45800C0A60D /* ContentView.swift */; };
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
 		EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */; };
 		EEE024A02C217EAB002E239A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE0249F2C217EAB002E239A /* Font+.swift */; };
-		EEE024A52C217F69002E239A /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */; };
-		EEE024A62C217F6B002E239A /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */; };
 		EEE024A92C2180A2002E239A /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE024A82C2180A2002E239A /* BookingView.swift */; };
 		EEE024AB2C226216002E239A /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE024AA2C226216002E239A /* CheckView.swift */; };
 		F75243832C21C3630014DD61 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75243822C21C3630014DD61 /* CoreNFC.framework */; };
@@ -25,14 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		EECEED602C1FE45800C0A60D /* Pikacho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pikacho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECEED632C1FE45800C0A60D /* PikachoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikachoApp.swift; sourceTree = "<group>"; };
 		EECEED652C1FE45800C0A60D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EECEED672C1FE45800C0A60D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEE0249F2C217EAB002E239A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
-		EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		EEE024A72C217FEE002E239A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EEE024A82C2180A2002E239A /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		EEE024AA2C226216002E239A /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
@@ -56,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE51E9372C226F1A00295C98 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */,
+				EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		EECEED572C1FE45800C0A60D = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +107,8 @@
 		EEE0249E2C217E9C002E239A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EE51E9372C226F1A00295C98 /* Font */,
 				EECEED672C1FE45800C0A60D /* Assets.xcassets */,
-				EEE024A22C217EE7002E239A /* Font */,
 				EEE024A12C217EC9002E239A /* Extension */,
 			);
 			path = Resource;
@@ -113,13 +122,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		EEE024A22C217EE7002E239A /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */,
-				EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */,
-			);
-			path = Font;
 		F75243812C21C3630014DD61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,10 +217,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE024A52C217F69002E239A /* SF-Pro-Text-Regular.otf in Resources */,
 				EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */,
-				EEE024A62C217F6B002E239A /* SF-Pro-Text-Bold.otf in Resources */,
 				EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */,
+				EE51E93B2C226FAA00295C98 /* SF-Pro-Text-Regular.otf in Resources */,
+				EE51E9392C226F6400295C98 /* SF-Pro-Text-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
