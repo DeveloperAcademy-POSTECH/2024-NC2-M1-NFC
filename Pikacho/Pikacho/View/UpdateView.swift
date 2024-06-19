@@ -96,10 +96,6 @@ struct UpdateView: View {
         }
     }
     
-        private func deleteBooking() {
-            DataManager.shared.removeBooking(by: booking.id)
-            showUpdateView = false
-        }
 }
 
 

@@ -7,9 +7,9 @@ import SwiftUI
 struct DetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) private var dismiss
-
+    
     @Binding var showUpdateView: Bool
-
+    
     @State private var newName: String
     @State private var newPerposeOfReservation: String
     @State private var newNumberOfPeople: String
@@ -21,16 +21,16 @@ struct DetailView: View {
     @State private var updatedBooking: PCBooking // 새로운 변수
     
     init(booking: PCBooking, showUpdateView: Binding<Bool>) {
-            self._showUpdateView = showUpdateView
-            
-            // 초기값 설정
-            self.originalBooking = booking
-            self._newName = State(initialValue: booking.name)
-            self._newPerposeOfReservation = State(initialValue: booking.perposeOfReservation ?? "")
-            self._newNumberOfPeople = State(initialValue: "\(booking.numberOfPeople ?? 0)")
-            self._newPassword = State(initialValue: "\(booking.password)")
-            self._updatedBooking = State(initialValue: booking)
-        }
+        self._showUpdateView = showUpdateView
+        
+        // 초기값 설정
+        self.originalBooking = booking
+        self._newName = State(initialValue: booking.name)
+        self._newPerposeOfReservation = State(initialValue: booking.perposeOfReservation ?? "")
+        self._newNumberOfPeople = State(initialValue: "\(booking.numberOfPeople ?? 0)")
+        self._newPassword = State(initialValue: "\(booking.password)")
+        self._updatedBooking = State(initialValue: booking)
+    }
     
     var body: some View {
         ZStack{
@@ -38,46 +38,49 @@ struct DetailView: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .leading) {
+                
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(Color.pikachoGray300)
+                    .frame(width: 40, height: 5)
+                    .padding(.bottom, 16)
+                    .frame(maxWidth: .infinity)
+                
                 Text("수정 / 삭제하기")
                     .font(.PikachoHeadiline)
-                    .padding(.bottom, 20)
-                    .padding(.top, 20)
                 
-                
-                    CustomTextField(label: "닉네임", placeholder: "본인 닉네임을 영어로 입력해주세요.", text: $newName)
-                    .keyboardType(.asciiCapable)
-                    
-                    Spacer().frame(height: 20)
-                    
-                    CustomTextField(label: "사용 용도", placeholder: "예약 용도를 입력해주세요.", text: $newPerposeOfReservation)
-                    
-                    Spacer().frame(height: 20)
-                    
-                    CustomTextField(label: "예약 인원", placeholder: "예약 인원을 입력해주세요.", text:  $newNumberOfPeople)
-                        .keyboardType(.numberPad)
-                    
-                    Spacer().frame(height: 20)
-                    
-                    CustomTextField(label: "비밀번호", placeholder: "예약 수정 시 사용할 비밀번호(4자리)를 입력해주세요.", text: $newPassword)
-                        .keyboardType(.numberPad)
-                    
+                Spacer().frame(height: 20)
 
-               
+                CustomTextField(label: "닉네임", placeholder: "본인 닉네임을 영어로 입력해주세요.", text: $newName)
+                    .keyboardType(.asciiCapable)
+                
+                Spacer().frame(height: 20)
+                
+                CustomTextField(label: "사용 용도", placeholder: "예약 용도를 입력해주세요.", text: $newPerposeOfReservation)
+                
+                Spacer().frame(height: 20)
+                
+                CustomTextField(label: "예약 인원", placeholder: "예약 인원을 입력해주세요.", text:  $newNumberOfPeople)
+                    .keyboardType(.numberPad)
+                
+                Spacer().frame(height: 20)
+                
+                CustomTextField(label: "비밀번호", placeholder: "예약 수정 시 사용할 비밀번호(4자리)를 입력해주세요.", text: $newPassword)
+                    .keyboardType(.numberPad)
+                
+                
+                
                 Spacer()
                 
                 HStack {
                     Button(action: {
-                        // 수정 취소 버튼
-                        // 수정된 값 초기화
-                        newName = originalBooking.name
-                        newPerposeOfReservation = originalBooking.perposeOfReservation ?? ""
-                        newNumberOfPeople = "\(originalBooking.numberOfPeople ?? 0)"
-                        newPassword = "\(originalBooking.password)"
+                        confirmDelete()
+                        
+
                     }, label: {
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(.pikachoDelete)
-                                //.frame(width: 361, height: 35)
+                            //.frame(width: 361, height: 35)
                                 .frame(width: 170, height: 35)
                             Text("삭제하기")
                                 .font(.PikachoButton)
@@ -89,13 +92,13 @@ struct DetailView: View {
                     Button(action: {
                         // 수정 완료 버튼
                         verifyPassword()
-                        dismiss()
+                       
                     }, label: {
                         
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(.accentColor)
-                                //.frame(width: 361, height: 35)
+                            //.frame(width: 361, height: 35)
                                 .frame(width: 170, height: 35)
                             Text("저장하기")
                                 .font(.PikachoButton)
@@ -104,15 +107,36 @@ struct DetailView: View {
                         }
                     })
                 }
-                .padding(.horizontal)
+                //.padding(.horizontal)
             }
             .padding(.horizontal, 16)
             .navigationBarTitle(Text("예약 상세 정보 수정"), displayMode: .inline)
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("오류"), message: Text(alertMessage), dismissButton: .default(Text("확인")))
+//                Alert(title: Text("오류"), message: Text(alertMessage), dismissButton: .default(Text("확인")))
+                Alert(
+                                    title: Text(alertMessage.contains("오류") ? "오류" : "삭제 확인"),
+                                    message: Text(alertMessage),
+                                    primaryButton: .destructive(Text("삭제")) {
+                                        deleteBooking() // 삭제 확인 시 삭제 수행
+                                    },
+                                    secondaryButton: .cancel()
+                                )
             }
+            .onTapGesture {
+                        hideKeyboard()
+                    }
         }
     }
+    
+    private func confirmDelete() {
+          // 삭제 확인 알림
+//          showAlert = true
+//          alertMessage = "예약을 삭제하시겠습니까?"
+        alertMessage = "예약을 삭제하시겠습니까?"
+                showAlert = true
+
+      }
+      
     
     private func verifyPassword() {
         if let intPassword = Int(newPassword), intPassword == originalBooking.password {
@@ -124,7 +148,7 @@ struct DetailView: View {
             showAlert = true
         }
     }
-
+    
     
     private func updateBooking() {
         // newName, newPerposeOfReservation, newPassword는 이미 옵셔널이 아니기 때문에 추가적인 처리가 필요 없습니다.
@@ -152,5 +176,14 @@ struct DetailView: View {
         // DetailView를 닫습니다.
         presentationMode.wrappedValue.dismiss()
     }
-
+    
+    private func deleteBooking() {
+            // 예약을 삭제합니다.
+            DataManager.shared.deleteBooking(originalBooking)
+            
+            // 모든 뷰를 닫습니다.
+            showUpdateView = false
+            presentationMode.wrappedValue.dismiss()
+        }
+    
 }

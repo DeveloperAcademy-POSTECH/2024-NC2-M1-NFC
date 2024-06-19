@@ -21,15 +21,7 @@ class DataManager {
     func getAllBookings() -> [PCBooking] {
         return bookings
     }
-        
-//    func removeBooking(_ booking: PCBooking) {
-//            bookings.removeAll { $0.id == booking.id }
-//        }
-        
-    func removeBooking(by id: UUID) {
-                // id를 기준으로 배열에서 예약을 제거합니다.
-                bookings.removeAll { $0.id == id }
-            }
+
     func updateBooking(_ updatedBooking: PCBooking) {
             for index in 0..<bookings.count {
                 if bookings[index].id == updatedBooking.id {
@@ -38,6 +30,11 @@ class DataManager {
                     break
                 }
             }
+        }
+    
+    func deleteBooking(_ booking: PCBooking) {
+            // 예약 삭제 로직
+            bookings.removeAll { $0.id == booking.id }
         }
 }
 
@@ -89,14 +86,6 @@ struct BookingView: View {
                     CustomTextField(label: "비밀번호", placeholder: "예약 수정 시 사용할 비밀번호(4자리)를 입력해주세요.", text: $password)
                         .keyboardType(.numberPad)
                     
-//                    Picker("Color of Row", selection: $colorOfRow) {
-//                        ForEach(PCColorList.allCases, id: \.self) { color in
-//                            Text(color.tabkeBackgroundColor.description).tag(color)
-//                        }
-//                    }
-//                    .pickerStyle(MenuPickerStyle())
-//                    .padding()
-                    
                     Spacer()
                     
                     
@@ -146,6 +135,7 @@ struct CustomTextField: View {
         VStack(alignment: .leading) {
             Text(label)
                 .font(.PikachoBody)
+                //.padding(.leading, 16)
             
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
@@ -154,7 +144,7 @@ struct CustomTextField: View {
                 
                 TextField(placeholder, text: $text)
                     .font(.PikachoBody)
-                    .foregroundColor(.pikachoGray300)
+                    .foregroundColor(.black)
                     //.textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal, 16)
             }
