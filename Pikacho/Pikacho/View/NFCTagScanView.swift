@@ -61,6 +61,7 @@ struct NFCTagScanView: View {
         guard NFCNDEFReaderSession.readingAvailable else {
             alertMessage = "This device doesn't support tag scanning."
             showingAlert = true
+            print("NFC scanning not available on this device.")
             return
         }
 
@@ -84,6 +85,7 @@ class NFCDelegate: NSObject, NFCNDEFReaderSessionDelegate {
     }
 
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+        print("NFC tag detected.")
         DispatchQueue.main.async {
             self.haveToNavigate = true
         }
@@ -91,7 +93,7 @@ class NFCDelegate: NSObject, NFCNDEFReaderSessionDelegate {
 
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         if let readerError = error as? NFCReaderError {
-
+            print("NFC session invalidated with error")
             if readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead && readerError.code != .readerSessionInvalidationErrorUserCanceled {
                 DispatchQueue.main.async {
                     self.alertMessage = error.localizedDescription

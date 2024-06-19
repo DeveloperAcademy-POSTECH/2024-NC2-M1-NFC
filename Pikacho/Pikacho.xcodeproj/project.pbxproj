@@ -39,6 +39,7 @@
 		F75243822C21C3630014DD61 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		F75243842C21C37F0014DD61 /* NFCTagScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCTagScanView.swift; sourceTree = "<group>"; };
 		F75243882C21C7330014DD61 /* NFCFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCFeature.swift; sourceTree = "<group>"; };
+		F752438E2C22FEBA0014DD61 /* PikachoRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PikachoRelease.entitlements; sourceTree = "<group>"; };
 		F77E75D32C2118D800972FFE /* PCBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCBooking.swift; sourceTree = "<group>"; };
 		F77E75D52C211D0000972FFE /* PCColorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCColorList.swift; sourceTree = "<group>"; };
 		F77E75D72C211DAE00972FFE /* ColorWithHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorWithHex.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		EECEED622C1FE45800C0A60D /* Pikacho */ = {
 			isa = PBXGroup;
 			children = (
+				F752438E2C22FEBA0014DD61 /* PikachoRelease.entitlements */,
 				EEE024A72C217FEE002E239A /* Info.plist */,
 				EEE0249E2C217E9C002E239A /* Resource */,
 				EECEED632C1FE45800C0A60D /* PikachoApp.swift */,
@@ -401,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Pikacho/PikachoRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pikacho/Preview Content\"";
