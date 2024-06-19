@@ -11,6 +11,11 @@
 		EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECEED652C1FE45800C0A60D /* ContentView.swift */; };
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
 		EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */; };
+		EEE024A02C217EAB002E239A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE0249F2C217EAB002E239A /* Font+.swift */; };
+		EEE024A52C217F69002E239A /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */; };
+		EEE024A62C217F6B002E239A /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */; };
+		EEE024A92C2180A2002E239A /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE024A82C2180A2002E239A /* BookingView.swift */; };
+		EEE024AB2C226216002E239A /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE024AA2C226216002E239A /* CheckView.swift */; };
 		F75243832C21C3630014DD61 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75243822C21C3630014DD61 /* CoreNFC.framework */; };
 		F75243852C21C37F0014DD61 /* NFCTagScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75243842C21C37F0014DD61 /* NFCTagScanView.swift */; };
 		F75243892C21C7330014DD61 /* NFCFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75243882C21C7330014DD61 /* NFCFeature.swift */; };
@@ -25,6 +30,12 @@
 		EECEED652C1FE45800C0A60D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EECEED672C1FE45800C0A60D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EEE0249F2C217EAB002E239A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		EEE024A72C217FEE002E239A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EEE024A82C2180A2002E239A /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		EEE024AA2C226216002E239A /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		F75243822C21C3630014DD61 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		F75243842C21C37F0014DD61 /* NFCTagScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCTagScanView.swift; sourceTree = "<group>"; };
 		F75243882C21C7330014DD61 /* NFCFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCFeature.swift; sourceTree = "<group>"; };
@@ -65,11 +76,12 @@
 		EECEED622C1FE45800C0A60D /* Pikacho */ = {
 			isa = PBXGroup;
 			children = (
+				EEE024A72C217FEE002E239A /* Info.plist */,
+				EEE0249E2C217E9C002E239A /* Resource */,
 				EECEED632C1FE45800C0A60D /* PikachoApp.swift */,
 				F77E75D92C211DBF00972FFE /* Util */,
 				F77E75D22C2117C700972FFE /* View */,
 				F77E75D12C2117BD00972FFE /* Model */,
-				EECEED672C1FE45800C0A60D /* Assets.xcassets */,
 				EECEED692C1FE45800C0A60D /* Preview Content */,
 			);
 			path = Pikacho;
@@ -83,6 +95,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EEE0249E2C217E9C002E239A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EECEED672C1FE45800C0A60D /* Assets.xcassets */,
+				EEE024A22C217EE7002E239A /* Font */,
+				EEE024A12C217EC9002E239A /* Extension */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		EEE024A12C217EC9002E239A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EEE0249F2C217EAB002E239A /* Font+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EEE024A22C217EE7002E239A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */,
+				EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Font;
 		F75243812C21C3630014DD61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				EECEED652C1FE45800C0A60D /* ContentView.swift */,
+				EEE024A82C2180A2002E239A /* BookingView.swift */,
+				EEE024AA2C226216002E239A /* CheckView.swift */,
 				F75243842C21C37F0014DD61 /* NFCTagScanView.swift */,
 			);
 			path = View;
@@ -176,7 +215,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE024A52C217F69002E239A /* SF-Pro-Text-Regular.otf in Resources */,
 				EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */,
+				EEE024A62C217F6B002E239A /* SF-Pro-Text-Bold.otf in Resources */,
 				EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +231,9 @@
 			files = (
 				F77E75D82C211DAE00972FFE /* ColorWithHex.swift in Sources */,
 				EECEED662C1FE45800C0A60D /* ContentView.swift in Sources */,
+				EEE024A92C2180A2002E239A /* BookingView.swift in Sources */,
+				EEE024AB2C226216002E239A /* CheckView.swift in Sources */,
+				EEE024A02C217EAB002E239A /* Font+.swift in Sources */,
 				F77E75D42C2118D800972FFE /* PCBooking.swift in Sources */,
 				F75243892C21C7330014DD61 /* NFCFeature.swift in Sources */,
 				F77E75D62C211D0000972FFE /* PCColorList.swift in Sources */,
@@ -331,6 +375,7 @@
 				DEVELOPMENT_TEAM = 873V2J7TPM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pikacho/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -360,6 +405,7 @@
 				DEVELOPMENT_TEAM = 873V2J7TPM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pikacho/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
