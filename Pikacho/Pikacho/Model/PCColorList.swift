@@ -25,7 +25,7 @@ enum PCColorList: Int, CaseIterable, Hashable, Codable {
     case timeTable12
     case timeTable13
 
-    var tabkeBackgroundColor: Color {
+    var tableBackgroundColor: Color {
         switch self {
         case .default:
             return Color(hex: 0xECECEC)
@@ -57,4 +57,8 @@ enum PCColorList: Int, CaseIterable, Hashable, Codable {
             return Color(hex: 0xFCD1BE)
         }
     }
+
+
+
+   
 }
