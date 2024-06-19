@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+
 struct CheckView: View {
     
     @State private var showYeView: Bool = false
@@ -29,11 +30,11 @@ struct CheckView: View {
                     Text("Number of People: \(booking.numberOfPeople ?? 0)")
                     Text("Password: \(booking.password)")
                     //Text("Color: \(booking.colorOfRow.rawValue)")
-                    Text("Color: \(booking.colorOfRow.tabkeBackgroundColor.description)")
+                    Text("Color: \(booking.colorOfRow.tableBackgroundColor.description)")
 
                 }
                 .padding()
-                .background(booking.colorOfRow.tabkeBackgroundColor)
+                .background(booking.colorOfRow.tableBackgroundColor)
                 .cornerRadius(8)
             }
         }
