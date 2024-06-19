@@ -12,8 +12,6 @@
 		EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED672C1FE45800C0A60D /* Assets.xcassets */; };
 		EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */; };
 		EEE024A02C217EAB002E239A /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE0249F2C217EAB002E239A /* Font+.swift */; };
-		EEE024A52C217F69002E239A /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */; };
-		EEE024A62C217F6B002E239A /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */; };
 		EEE024A92C2180A2002E239A /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE024A82C2180A2002E239A /* BookingView.swift */; };
 		EEE024AB2C226216002E239A /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE024AA2C226216002E239A /* CheckView.swift */; };
 		F75243832C21C3630014DD61 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75243822C21C3630014DD61 /* CoreNFC.framework */; };
@@ -31,8 +29,6 @@
 		EECEED672C1FE45800C0A60D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECEED6A2C1FE45800C0A60D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEE0249F2C217EAB002E239A /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
-		EEE024A32C217F03002E239A /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		EEE024A42C217F03002E239A /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Bold.otf"; path = "../../../../../../../../Library/Fonts/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		EEE024A72C217FEE002E239A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EEE024A82C2180A2002E239A /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		EEE024AA2C226216002E239A /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
@@ -113,13 +109,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		EEE024A22C217EE7002E239A /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				EEE024AD2C226BBC002E239A /* SF-Pro-Text-Bold.otf */,
-				EEE024AC2C226BBC002E239A /* SF-Pro-Text-Regular.otf */,
-			);
-			path = Font;
 		F75243812C21C3630014DD61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,9 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE024AE2C226BBC002E239A /* SF-Pro-Text-Regular.otf in Resources */,
 				EECEED6B2C1FE45800C0A60D /* Preview Assets.xcassets in Resources */,
-				EEE024AF2C226BBC002E239A /* SF-Pro-Text-Bold.otf in Resources */,
 				EECEED682C1FE45800C0A60D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
