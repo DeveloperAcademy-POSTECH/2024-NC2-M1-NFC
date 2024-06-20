@@ -21,6 +21,21 @@ class DataManager {
     func getAllBookings() -> [PCBooking] {
         return bookings
     }
+
+    func updateBooking(_ updatedBooking: PCBooking) {
+            for index in 0..<bookings.count {
+                if bookings[index].id == updatedBooking.id {
+                    // 예약을 찾아서 업데이트합니다.
+                    bookings[index] = updatedBooking
+                    break
+                }
+            }
+        }
+    
+    func deleteBooking(_ booking: PCBooking) {
+            // 예약 삭제 로직
+            bookings.removeAll { $0.id == booking.id }
+        }
 }
 
 struct BookingView: View {
@@ -54,6 +69,8 @@ struct BookingView: View {
                     
                     // CustomTextField로 텍스트 필드를 생성
                     CustomTextField(label: "닉네임", placeholder: "본인 닉네임을 영어로 입력해주세요.", text: $name)
+                        .keyboardType(.asciiCapable)
+
                     
                     Spacer().frame(height: 20)
                     
@@ -68,14 +85,6 @@ struct BookingView: View {
                     
                     CustomTextField(label: "비밀번호", placeholder: "예약 수정 시 사용할 비밀번호(4자리)를 입력해주세요.", text: $password)
                         .keyboardType(.numberPad)
-                    
-//                    Picker("Color of Row", selection: $colorOfRow) {
-//                        ForEach(PCColorList.allCases, id: \.self) { color in
-//                            Text(color.tabkeBackgroundColor.description).tag(color)
-//                        }
-//                    }
-//                    .pickerStyle(MenuPickerStyle())
-//                    .padding()
                     
                     Spacer()
                     
@@ -126,6 +135,7 @@ struct CustomTextField: View {
         VStack(alignment: .leading) {
             Text(label)
                 .font(.PikachoBody)
+                //.padding(.leading, 16)
             
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
@@ -134,7 +144,7 @@ struct CustomTextField: View {
                 
                 TextField(placeholder, text: $text)
                     .font(.PikachoBody)
-                    .foregroundColor(.pikachoGray300)
+                    .foregroundColor(.black)
                     //.textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal, 16)
             }

@@ -11,7 +11,10 @@ import SwiftUI
 struct PikachoApp: App {
     var body: some Scene {
         WindowGroup {
-            NFCTagScanView()
+
+            //UpdateView(showUpdateView: .constant(true))
+            ContentView()
+
         }
     }
 }

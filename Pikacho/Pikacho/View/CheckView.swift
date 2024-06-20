@@ -12,7 +12,10 @@ import SwiftData
 struct CheckView: View {
     
     @State private var showYeView: Bool = false
+    @State private var showUpdateView: Bool = false
     @State private var bookings: [PCBooking] = []
+    @State private var selectedBooking: PCBooking?
+
     
     var body: some View {
         VStack {
@@ -22,6 +25,20 @@ struct CheckView: View {
                 Text("예약하기")
             })
             .padding()
+            
+//            Button(action: {
+//                showUpdateView.toggle()
+//            }, label: {
+//                Text("수정 / 삭제하기")
+//            })
+//            .padding()
+            Button(action: {
+                            showUpdateView.toggle()
+                        }, label: {
+                            Text("수정 / 삭제하기")
+                        })
+                        .padding()
+                        .disabled(bookings.isEmpty)
 
             List(bookings) { booking in
                 VStack(alignment: .leading) {
@@ -36,6 +53,11 @@ struct CheckView: View {
                 .padding()
                 .background(booking.colorOfRow.tableBackgroundColor)
                 .cornerRadius(8)
+                .onTapGesture {
+                                    // 예약을 선택하고 UpdateView로 이동
+                                    selectedBooking = booking
+                                    showUpdateView.toggle()
+                                }
             }
         }
         .onAppear {
@@ -47,6 +69,15 @@ struct CheckView: View {
                     loadBookings()
                 }
         }
+        .sheet(isPresented: $showUpdateView) {
+                    if let booking = selectedBooking {
+                        UpdateView(showUpdateView: $showUpdateView, booking: booking)
+                            .onDisappear {
+                                loadBookings()
+                            }
+                    }
+                }
+
     }
 
     private func loadBookings() {

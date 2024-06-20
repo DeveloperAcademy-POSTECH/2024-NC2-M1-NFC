@@ -25,3 +25,4 @@ class PCBooking: Identifiable {
         self.colorOfRow = colorOfRow
     }
 }
+
