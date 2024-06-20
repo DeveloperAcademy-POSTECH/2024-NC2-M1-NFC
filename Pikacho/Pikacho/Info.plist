@@ -2,12 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIBackgroundModes</key>
+    <array>
+	<string>nfc-reader-session</string>
+    </array>
 	<key>NFCReaderUsageDescription</key>
-	<string>need to scan NFC tags.</string>
+	<string>for scanning</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Text-Bold.otf</string>
 		<string>SF-Pro-Text-Regular.otf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>nearby-interaction</string>
 	</array>
 </dict>
 </plist>

@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AF108B12C2318FD00A956A1 /* Pikacho.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pikacho.entitlements; sourceTree = "<group>"; };
 		EE51E9382C226F6400295C98 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		EE51E93A2C226FAA00295C98 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		EECEED602C1FE45800C0A60D /* Pikacho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pikacho.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +86,7 @@
 		EECEED622C1FE45800C0A60D /* Pikacho */ = {
 			isa = PBXGroup;
 			children = (
+				3AF108B12C2318FD00A956A1 /* Pikacho.entitlements */,
 				EEE024A72C217FEE002E239A /* Info.plist */,
 				EEE0249E2C217E9C002E239A /* Resource */,
 				EECEED632C1FE45800C0A60D /* PikachoApp.swift */,
@@ -371,13 +373,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Pikacho/Pikacho.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pikacho/Preview Content\"";
-				DEVELOPMENT_TEAM = 873V2J7TPM;
+				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pikacho/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "for scanning a tag";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -388,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DevAcademy.Pikacho;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.DevAcademy.Pikacho;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -401,13 +405,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Pikacho/Pikacho.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pikacho/Preview Content\"";
-				DEVELOPMENT_TEAM = 873V2J7TPM;
+				DEVELOPMENT_TEAM = 333J2S2AQK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pikacho/Info.plist;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "for scanning a tag";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -418,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = DevAcademy.Pikacho;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.DevAcademy.Pikacho;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
