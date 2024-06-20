@@ -12,7 +12,7 @@ struct PikachoApp: App {
     var body: some Scene {
         WindowGroup {
             //UpdateView(showUpdateView: .constant(true))
-            CheckView()
+            ContentView()
         }
     }
 }
