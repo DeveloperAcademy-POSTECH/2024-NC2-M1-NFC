@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+
 struct CheckView: View {
     
     @State private var showYeView: Bool = false

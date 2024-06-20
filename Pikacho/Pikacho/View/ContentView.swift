@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showYeView: Bool = false
+    @State private var bookings: [PCBooking] = []
     var body: some View {
         VStack(alignment: .leading,spacing: 0) {
 
@@ -88,7 +90,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                     }
                 }
-                Button{}label: {
+                Button{showYeView.toggle()}label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.gray)
@@ -101,19 +103,32 @@ struct ContentView: View {
             }
         }
         .padding(0)
+        .onAppear {
+            loadBookings()
+        }
+        .sheet(isPresented: $showYeView) {
+            BookingView(showYeView: $showYeView)
+                .onDisappear {
+                    loadBookings()
+                }
+        }
     }
 
     @ViewBuilder
     private func TableViewForReservation() -> some View {
         VStack(alignment:.trailing, spacing: 4){
             Rectangle()
-                .fill(Color.gray)
+                .fill(.gray)
                 .frame(width: 309, height: 1)
             Button{}label:{
-                RoundedRectangle(cornerRadius: 5).frame(width:255, height: 36).foregroundColor(.gray)
+                RoundedRectangle(cornerRadius: 5).frame(width:255, height: 36).foregroundColor(PCColorList.default.tableBackgroundColor)
             }.padding(.horizontal, 8)
 
         }
+    }
+
+    private func loadBookings() {
+        self.bookings = DataManager.shared.getAllBookings()
     }
 }
 

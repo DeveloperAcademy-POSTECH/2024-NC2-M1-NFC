@@ -11,8 +11,10 @@ import SwiftUI
 struct PikachoApp: App {
     var body: some Scene {
         WindowGroup {
+
             //UpdateView(showUpdateView: .constant(true))
             ContentView()
+
         }
     }
 }
