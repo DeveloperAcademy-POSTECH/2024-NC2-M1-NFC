@@ -46,7 +46,13 @@ struct NFCTagScanView: View {
             Spacer()
 
             Button{
-                beginScanning()
+                print(haveToNavigate)
+//                beginScanning()
+                NewNFCDelete.shared.completeNavigate = {
+                    haveToNavigate = true
+                    print(haveToNavigate)
+                }
+                startNFCTagging()
             }label: {
                 ZStack{
                     RoundedRectangle(cornerRadius: 10).fill(Color(hex: 0x523BDB)).frame(width: 361, height: 51)
@@ -54,24 +60,16 @@ struct NFCTagScanView: View {
                 }
             }
 
-            NavigationLink(destination: ContentView(), isActive: $haveToNavigate
-            ) {
-                EmptyView()
-            }
         }.alert(isPresented: $showingAlert) {
             Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-                
+            
         }
-//        .onReceive(nfcFeature.$showingAlert){
-//            showingAlert = $0
-//            alertMessage = nfcFeature.alertMessage
-//        }
+        .sheet(isPresented: $haveToNavigate){ ContentView()
+        }
 
     }
         
     private func beginScanning() {
-        
-//        session?.invalidate()
         
         guard NFCNDEFReaderSession.readingAvailable else {
             alertMessage = "This device doesn't support tag scanning."
@@ -84,9 +82,41 @@ struct NFCTagScanView: View {
        
 
         session = NFCNDEFReaderSession(delegate: NFCDelegate(showingAlert: $showingAlert, alertMessage: $alertMessage, haveToNavigate: $haveToNavigate), queue: nil, invalidateAfterFirstRead: true)
-        session?.alertMessage = "Hold your iphone near the item to learn more about it."
-        session?.begin()
+//        session?.alertMessage = "Hold your iphone near the item to learn more about it."
+//        session?.begin()
     }
+}
+
+private func startNFCTagging() {
+    let session = NFCTagReaderSession(pollingOption: .iso14443, delegate: NewNFCDelete.shared)
+    session?.begin()
+//    session?.invalidate()
+}
+
+class NewNFCDelete: NSObject, NFCTagReaderSessionDelegate {
+    static let shared = NewNFCDelete()
+    
+    var completeNavigate: (() -> Void)?
+    
+    func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
+        print("become active")
+    }
+    
+    func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: any Error) {
+        if let readerError = error as? NFCReaderError, readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead {
+            print("NFC Reader session 오루 \(error.localizedDescription)")
+        }
+    }
+    
+    func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
+        print(tags)
+        if let completeNavigate {
+            completeNavigate()
+        }
+        session.invalidate()
+    }
+    
+    
 }
 
 class NFCDelegate: NSObject, NFCNDEFReaderSessionDelegate {
