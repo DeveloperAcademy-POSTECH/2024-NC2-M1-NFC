@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var showUpdateView: Bool = false
     @State private var bookings: [PCBooking] = []
     @State private var selectedBooking: PCBooking?
-    @State private var selectedTimeSlots: [Int] = [] // 선택된 시간 슬롯을 저장
+    @State private var selectedTimeSlots: [Int] = [] 
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {

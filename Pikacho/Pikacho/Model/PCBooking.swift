@@ -14,7 +14,6 @@ class PCBooking: Identifiable {
     var numberOfPeople: Int?
     var password: Int
     var timeSlot: Int
-//    var hoursOfUse:
     var colorOfRow: PCColorList = .default
 
     init(id: UUID, name: String, perposeOfReservation: String? = nil, numberOfPeople: Int? = nil, password: Int, timeSlot: Int, colorOfRow: PCColorList) {

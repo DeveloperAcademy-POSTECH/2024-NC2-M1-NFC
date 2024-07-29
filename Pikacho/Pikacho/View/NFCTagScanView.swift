@@ -15,9 +15,6 @@ struct NFCTagScanView: View {
     @State private var haveToNavigate = false
     
     
-//    @StateObject private var nfcFeature = NFCFeature()
-    
-    
     var body: some View {
         VStack{
             VStack{
@@ -82,15 +79,12 @@ struct NFCTagScanView: View {
        
 
         session = NFCNDEFReaderSession(delegate: NFCDelegate(showingAlert: $showingAlert, alertMessage: $alertMessage, haveToNavigate: $haveToNavigate), queue: nil, invalidateAfterFirstRead: true)
-//        session?.alertMessage = "Hold your iphone near the item to learn more about it."
-//        session?.begin()
     }
 }
 
 private func startNFCTagging() {
     let session = NFCTagReaderSession(pollingOption: .iso14443, delegate: NewNFCDelete.shared)
     session?.begin()
-//    session?.invalidate()
 }
 
 class NewNFCDelete: NSObject, NFCTagReaderSessionDelegate {
@@ -137,11 +131,6 @@ class NFCDelegate: NSObject, NFCNDEFReaderSessionDelegate {
             self.haveToNavigate = true
         }
     }
-    
-//    func readerSession(_ session: NFCNDEFReaderSession, didDetect tags: [any NFCNDEFTag]) {
-//        print("detected")
-//    }
-//    
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
         print("be active")
     }

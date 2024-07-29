@@ -123,7 +123,7 @@ struct BookingView: View {
             DataManager.shared.addBooking(newBooking)
         }
 
-        selectedTimeSlots.removeAll() // 선택된 시간대 초기화
+        selectedTimeSlots.removeAll() 
         showYeView.toggle()
     }
 
