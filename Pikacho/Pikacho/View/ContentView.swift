@@ -7,12 +7,16 @@
 
 import SwiftUI
 
+//날짜 설정 뷰
 struct ContentView: View {
     @State private var showYeView: Bool = false
+    @State private var showUpdateView: Bool = false
     @State private var bookings: [PCBooking] = []
-    var body: some View {
-        VStack(alignment: .leading,spacing: 0) {
+    @State private var selectedBooking: PCBooking?
+    @State private var selectedTimeSlots: [Int] = [] // 선택된 시간 슬롯을 저장
 
+    var body: some View {
+        VStack(alignment: .leading, spacing: 0) {
             Text("MeetingRoom#1").font(.system(size: 30, weight: .bold))
                 .padding(EdgeInsets(top: 20, leading: 0, bottom: 10, trailing: 0))
             Text("Time Table")
@@ -23,51 +27,19 @@ struct ContentView: View {
                 .foregroundColor(.gray)
                 .padding(.bottom, 16)
 
-            HStack{
-                VStack{
-                    Text("9 AM").font(.system(size: 12))
-                    Spacer()
-                    Text("10 AM").font(.system(size: 12))
-                    Spacer()
-                    Text("11 AM").font(.system(size: 12))
-                    Spacer()
-                    Text("12 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("1 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("2 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("3 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("4 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("5 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("6 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("7 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("8 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("9 PM").font(.system(size: 12))
-                    Spacer()
-                    Text("10 PM").font(.system(size: 12))
+            HStack {
+                VStack {
+                    Spacer().frame(height:16)
+                    ForEach(9..<23) { hour in
+                        Text("\(hour % 12 == 0 ? 12 : hour % 12) \(hour < 12 ? "AM" : "PM")").font(.system(size: 12))
+                        Spacer().frame(height: 30)
+                    }
                 }
-                ZStack{
-                    VStack(spacing:4){
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
-                        TableViewForReservation()
+                ZStack {
+                    VStack(spacing: 4) {
+                        ForEach(0..<13) { index in
+                            TableViewForReservation(index: index)
+                        }
                         Rectangle()
                             .fill(Color.gray)
                             .frame(width: 309, height: 1)
@@ -75,31 +47,43 @@ struct ContentView: View {
                     Rectangle()
                         .fill(Color.gray)
                         .frame(width: 1, height: 584)
-                        .offset(x:-115)
+                        .offset(x: -115)
                 }
-            }.frame(width:362,height: 587).padding(.bottom, 36)
+            }
+            .frame(width: 362, height: 587)
+            .padding(.bottom, 36)
 
-            HStack{
-                Button{}label: {
-                    ZStack{
+            HStack {
+                Button {
+                    if let booking = bookings.first(where: { selectedTimeSlots.contains($0.timeSlot) }) {
+                        selectedBooking = booking
+                    }
+                    showUpdateView.toggle()
+                } label: {
+                    ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(.gray)
-                            .frame(width:169, height: 35)
+                            .fill(bookings.contains { selectedTimeSlots.contains($0.timeSlot) } ? Color.accentColor : .gray)
+                            .frame(width: 169, height: 35)
                         Text("수정/삭제하기")
                             .font(.system(size: 16, weight: .regular))
                             .foregroundColor(.white)
                     }
                 }
-                Button{showYeView.toggle()}label: {
-                    ZStack{
+                .disabled(!bookings.contains { selectedTimeSlots.contains($0.timeSlot) })
+
+                Button {
+                    showYeView.toggle()
+                } label: {
+                    ZStack {
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(.gray)
-                            .frame(width:169, height: 35)
+                            .fill(!bookings.contains { selectedTimeSlots.contains($0.timeSlot) } ? Color.accentColor : .gray)
+                            .frame(width: 169, height: 35)
                         Text("예약하기")
                             .font(.system(size: 16, weight: .regular))
                             .foregroundColor(.white)
                     }
                 }
+                .disabled(bookings.contains { selectedTimeSlots.contains($0.timeSlot) })
             }
         }
         .padding(0)
@@ -107,23 +91,66 @@ struct ContentView: View {
             loadBookings()
         }
         .sheet(isPresented: $showYeView) {
-            BookingView(showYeView: $showYeView)
+            BookingView(showYeView: $showYeView, selectedTimeSlots: $selectedTimeSlots)
                 .onDisappear {
                     loadBookings()
                 }
         }
+        .sheet(isPresented: $showUpdateView) {
+            if let booking = selectedBooking {
+                UpdateView(showUpdateView: $showUpdateView, booking: booking)
+                    .onDisappear {
+                        loadBookings()
+                    }
+            }
+        }
     }
 
     @ViewBuilder
-    private func TableViewForReservation() -> some View {
-        VStack(alignment:.trailing, spacing: 4){
+    private func TableViewForReservation(index: Int) -> some View {
+        VStack(alignment: .trailing, spacing: 4) {
             Rectangle()
                 .fill(.gray)
                 .frame(width: 309, height: 1)
-            Button{}label:{
-                RoundedRectangle(cornerRadius: 5).frame(width:255, height: 36).foregroundColor(PCColorList.default.tableBackgroundColor)
-            }.padding(.horizontal, 8)
+            Button {
+                toggleSelection(index: index)
+            } label: {
+                ZStack {
+                    let color: Color = {
+                        if selectedTimeSlots.contains(index) {
+                            return .blue
+                        } else if let booking = bookings.first(where: { $0.timeSlot == index }) {
+                            return booking.colorOfRow.tableBackgroundColor
+                        } else {
+                            return PCColorList.default.tableBackgroundColor
+                        }
+                    }()
 
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(width: 255, height: 36)
+                        .foregroundColor(color)
+
+                    if let booking = bookings.first(where: { $0.timeSlot == index }) {
+                        Text("\(booking.name)/\(booking.perposeOfReservation ?? "")")
+                            .font(.system(size: 12))
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+            .padding(.horizontal, 8)
+        }
+    }
+
+
+    private func toggleSelection(index: Int) {
+        if selectedTimeSlots.contains(index) {
+            selectedTimeSlots.removeAll(where: { $0 == index })
+        } else if selectedTimeSlots.count < 3 {
+            selectedTimeSlots.append(index)
+            if let selectedBooking = bookings.first(where: { $0.timeSlot == index }) {
+                let identicalTimeSlots = bookings.filter { $0.id == selectedBooking.id }.map { $0.timeSlot }
+                selectedTimeSlots.append(contentsOf: identicalTimeSlots.filter { $0 != index })
+            }
         }
     }
 
@@ -131,6 +158,8 @@ struct ContentView: View {
         self.bookings = DataManager.shared.getAllBookings()
     }
 }
+
+
 
 #Preview {
     ContentView()

@@ -13,15 +13,17 @@ class PCBooking: Identifiable {
     var perposeOfReservation: String?
     var numberOfPeople: Int?
     var password: Int
+    var timeSlot: Int
 //    var hoursOfUse:
     var colorOfRow: PCColorList = .default
 
-    init(id: UUID, name: String, perposeOfReservation: String? = nil, numberOfPeople: Int? = nil, password: Int, colorOfRow: PCColorList) {
+    init(id: UUID, name: String, perposeOfReservation: String? = nil, numberOfPeople: Int? = nil, password: Int, timeSlot: Int, colorOfRow: PCColorList) {
         self.id = id
         self.name = name
         self.perposeOfReservation = perposeOfReservation
         self.numberOfPeople = numberOfPeople
         self.password = password
+        self.timeSlot = timeSlot
         self.colorOfRow = colorOfRow
     }
 }
