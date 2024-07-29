@@ -14,6 +14,7 @@ struct PikachoApp: App {
 
             //UpdateView(showUpdateView: .constant(true))
             ContentView()
+//            BookingView(showYeView: <#Binding<Bool>#>)
 
         }
     }
